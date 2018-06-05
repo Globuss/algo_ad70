@@ -14,7 +14,7 @@ let itMax = 10000;
 
 // Definition de la matrice qui represente les incompatibilites et les contraintes
 let matrices = [
-    [0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0],
+    [0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0],
     [1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1],
     [1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0],
     [0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0],
