@@ -74,7 +74,7 @@ while (sessions.length > 0 && it < itMax) {
                 // - Salle non utilise sur ce creneau
                 // - Si il n'y a pas une incompatibilite. (isOpen)
                 // - Si il n'y a pas de contraine (isAfter)
-                if (edt[i][s] === null && isOpen(i, s, sessions[x]) && isAfter(sessions[x], i) !== 0) {
+                if (edt[i][s] === null && isOpen(i, sessions[x]) && isAfter(sessions[x], i) !== 0) {
                     // Ajout de la session dans la matrice de l'emploi du temps
                     edt[i][s] = sessions[x];
                     // Suppression de la session de la liste des sessions restantes
@@ -95,7 +95,7 @@ function shuffle(tab) {
     // Copie du tableau dans la variable a
     let a = Array.from(tab);
 
-    // Boucle sur le nombre d'element dans la tableau
+    // Boucle sur le nombre d'element dans le tableau
     for (let i = a.length - 1; i > 0; i--) {
 
         // Defini un nombre random pour deplacer l'element dans le tableau
@@ -110,10 +110,9 @@ function shuffle(tab) {
 // Fonction qui sert a verifier qu'il n'y a pas d'incompatibilite
 // @Param : 
 //      i : number : demijournee
-//      s : number : salle
 //      x : string : lettre de la session 
 // @Return : Boolean
-function isOpen(i, s, x) {
+function isOpen(i, x) {
     let res = true;
 
     // Boucle sur l'emploi du temps par rapport a une demijournee
@@ -128,7 +127,7 @@ function isOpen(i, s, x) {
     return res;
 }
 
-// Fonction qui sert a melanger les elements d'un tableau
+// Fonction qui sert a verifier les contraintes de sessions avant/apres
 // @Param : 
 //      x : string : lettre de la session
 //      i : number : demijournee
